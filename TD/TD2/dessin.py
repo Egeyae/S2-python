@@ -48,9 +48,8 @@ def draw_cross():
     """
     x, y = randint(BORDERWIDTH+1, CANVAS_WIDTH-(2*CIRCLE_SIZE)+BORDERWIDTH-1),  randint(BORDERWIDTH+1, CANVAS_HEIGHT-(2*CIRCLE_SIZE)+BORDERWIDTH-1)
 
-    cnvs.create_rectangle(x+CIRCLE_SIZE-10, y, x+CIRCLE_SIZE+10, y+(2*CIRCLE_SIZE), fill=POSS_COLOR[0])
-    cnvs.create_rectangle(x, y+CIRCLE_SIZE-10, x+(2*CIRCLE_SIZE), y+CIRCLE_SIZE+10, fill=POSS_COLOR[0])
-
+    cnvs.create_line(x+CIRCLE_SIZE, y, x+CIRCLE_SIZE, y+(2*CIRCLE_SIZE), fill=POSS_COLOR[0], width=20)
+    cnvs.create_line(x, y+CIRCLE_SIZE, x+2*CIRCLE_SIZE, y+CIRCLE_SIZE, fill=POSS_COLOR[0], width=20)
 def choose_color():
     print("Please choose a color from the following list: ")
     for c in range(len(POSS_COLOR)):
