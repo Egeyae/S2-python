@@ -22,7 +22,6 @@ cnvs = tk.Canvas(root, width=CANVAS_WIDTH, height=CANVAS_HEIGHT, bg="black", \
     borderwidth=BORDERWIDTH, relief=tk.RIDGE)
 
 def draw_circle():
-    global objects
     """
     dessin d'un cercle de 2*CIRCLE_SIZE de diamètre (ici 100), choix de x et y aléatoire dans les limites possibles
     offset de 1 pour éviter de dépasser
@@ -33,7 +32,6 @@ def draw_circle():
     objects.append(cnvs.create_oval(x, y, x+CIRCLE_SIZE*2, y+CIRCLE_SIZE*2, fill=POSS_COLOR[0]))
 
 def draw_square():
-    global objects
     """
     dessin d'un carré de côté 2*CIRCLE_SIZE (ici 100)
     choix de x et y aléatoire
@@ -44,7 +42,6 @@ def draw_square():
     objects.append(cnvs.create_rectangle(x, y, x+(2*CIRCLE_SIZE), y+(2*CIRCLE_SIZE), fill=POSS_COLOR[0]))
 
 def draw_cross():
-    global objects
     """
     dessin d'une croix inscrite dans un carré comme précédemment, épaisseur = 20px
     choix de x, y aléatoire
@@ -73,7 +70,6 @@ btn_square = tk.Button(root, text="Carré", relief=tk.FLAT, bg="floralwhite", fg
 btn_cross = tk.Button(root, text="Croix", relief=tk.FLAT, bg="floralwhite", fg="gold1", command=draw_cross)
 
 def undo():
-    global objects
     if len(objects) != 0:
         if isinstance(objects[-1], list):
             cnvs.delete(objects[-1][0])
